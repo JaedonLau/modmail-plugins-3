@@ -95,7 +95,7 @@ class Menu(commands.Cog):
                         emoji = m.content
                         break
 
-                await ctx.send('What is the option command? (e.g. `reply Transferring && move 1238343847384`)')
+                await ctx.send('What is the option command? (Example: `reply Transferring you to [Category] && move [Category ID]`)')
                 m = await self.bot.wait_for('message', check=lambda x: ctx.message.channel == x.channel and ctx.message.author == x.author, timeout=300)
                 config['options'][emoji] = m.content
         except asyncio.TimeoutError:
